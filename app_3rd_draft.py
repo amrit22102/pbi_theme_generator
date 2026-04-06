@@ -351,7 +351,6 @@ def _init():
     if "global_font_face" not in st.session_state: st.session_state.global_font_face = "Segoe UI"
     if "global_font_size" not in st.session_state: st.session_state.global_font_size = 10
     if "global_font_color" not in st.session_state: st.session_state.global_font_color = "#252423"
-    if "report_bg_color" not in st.session_state: st.session_state.report_bg_color = "#FFFFFF"
 _init()
 
 def apply_preset(preset_name):
@@ -381,7 +380,6 @@ def apply_preset(preset_name):
     st.session_state.global_font_face  = preset.get("fontFace", "Segoe UI")
     st.session_state.global_font_size  = preset.get("fontSize", 10)
     st.session_state.global_font_color = preset.get("fontColor", preset["foreground"])
-    st.session_state.report_bg_color   = preset.get("background", "#FFFFFF")
 
     # Reset all per-visual customizations so they pick up new palette
     st.session_state.vis_custom = {}
@@ -648,14 +646,6 @@ def build_export():
         if key in t:
             out[key] = t[key]
 
-    # ── REPORT BACKGROUND COLOR
-    rbg = st.session_state.report_bg_color
-    out["background"] = rbg
-    # Also write into visualStyles["*"]["*"] so page canvas picks it up
-    global_star_pre = out["visualStyles"]["*"]["*"]
-    global_star_pre["background"] = [{"show": True, "transparency": 0, "color": {"solid": {"color": rbg}}}]
-    global_star_pre["outspacePane"] = [{"backgroundColor": {"solid": {"color": rbg}}, "transparency": 0, "border": True, "borderColor": {"solid": {"color": t.get("foregroundNeutralTertiary", "#B3B0AD")}}}]
-
     # ── GLOBAL FONT — write to textClasses and visualStyles["*"]["*"]
     gff  = st.session_state.global_font_face
     gfs  = st.session_state.global_font_size
@@ -755,16 +745,6 @@ with left:
                 st.session_state.vis_custom[vtype]["fontFace"]  = new_gff
                 st.session_state.vis_custom[vtype]["fontSize"]  = new_gfs
                 st.session_state.vis_custom[vtype]["fontColor"] = new_gfc
-
-    st.divider()
-
-    # ── REPORT BACKGROUND COLOR ───────────────────────────────────────────────
-    st.markdown('<p style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#2a3555;margin-bottom:6px">🖼  Report Background Color</p>', unsafe_allow_html=True)
-    st.markdown('<p style="font-size:8px;color:#1e2e50;margin-bottom:8px;font-family:IBM Plex Mono,monospace">Sets background &amp; outspacePane in JSON</p>', unsafe_allow_html=True)
-    new_rbg = st.color_picker("Background Color", st.session_state.report_bg_color, key="report_bg_picker", label_visibility="collapsed")
-    if new_rbg != st.session_state.report_bg_color:
-        st.session_state.report_bg_color = new_rbg
-        st.session_state.theme["background"] = new_rbg
 
     st.divider()
 
@@ -937,7 +917,6 @@ with right:
     gff_disp = st.session_state.global_font_face
     gfs_disp = st.session_state.global_font_size
     gfc_disp = st.session_state.global_font_color
-    rbg_disp = st.session_state.report_bg_color
 
     n_visuals = len(sel_types_multi)
     grid_cols = "1fr" if n_visuals == 1 else ("1fr 1fr" if n_visuals <= 4 else "1fr 1fr 1fr")
@@ -1071,11 +1050,6 @@ with right:
       <div class="preset-dot" style="background:{gfc_disp}"></div>
       <span class="font-badge-name">{gff_disp}</span>
       <span class="font-badge-meta">{gfs_disp}px · {gfc_disp}</span>
-    </div>
-    <div class="font-badge">
-      <div class="preset-dot" style="background:{rbg_disp};border:1px solid #2a3555"></div>
-      <span class="font-badge-name">BG</span>
-      <span class="font-badge-meta">{rbg_disp}</span>
     </div>
   </div>
 
