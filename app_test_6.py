@@ -52,124 +52,163 @@ iframe{border:none!important}
 
 # ── CONSTANTS ──────────────────────────────────────────────────────────────────
 PRESET_THEMES = {
-    "Microsoft Default": {
-        "desc": "Official PBI palette",
-        "dataColors": ["#118DFF","#12239E","#E66C37","#6B007B","#E044A7","#744EC2","#D9B300","#D64550","#197278","#1AAB40"],
-        "foreground":"#252423","foregroundNeutralSecondary":"#605E5C","foregroundNeutralTertiary":"#B3B0AD",
-        "background":"#FFFFFF","backgroundLight":"#F3F2F1","backgroundNeutral":"#C8C6C4",
-        "tableAccent":"#118DFF","good":"#1AAB40","neutral":"#D9B300","bad":"#D64554",
-        "maximum":"#118DFF","center":"#D9B300","minimum":"#DEEFFF",
-        "fontFace":"Segoe UI","fontSize":10,"fontColor":"#252423",
-        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#B3B0AD","yAxisGridColor":"#B3B0AD",
+    "Office Light": {
+        "desc": "PowerBI Office white",
+        "dataColors": ["#118DFF","#12239E","#E66C37","#107C10","#D83B01","#0078D4","#A4373A","#6B69D6","#00B7C3","#FFB900"],
+        "foreground":"#1F1F1F","foregroundNeutralSecondary":"#3C3C3C","foregroundNeutralTertiary":"#737373",
+        "background":"#FFFFFF","backgroundLight":"#F7F7F7","backgroundNeutral":"#D0CECE",
+        "tableAccent":"#118DFF","good":"#107C10","neutral":"#FFB900","bad":"#D83B01",
+        "maximum":"#118DFF","center":"#0078D4","minimum":"#E8E8E8",
+        "fontFace":"Segoe UI","fontSize":10,"fontColor":"#1F1F1F",
+        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#E0E0E0","yAxisGridColor":"#E0E0E0",
     },
-    "Midnight Ocean": {
-        "desc": "Deep navy & cyan",
-        "dataColors": ["#00B4D8","#0077B6","#90E0EF","#023E8A","#48CAE4","#ADE8F4","#CAF0F8","#0096C7","#00B4D8","#03045E"],
-        "foreground":"#1A1A2E","foregroundNeutralSecondary":"#4A4A6A","foregroundNeutralTertiary":"#8A8AAA",
-        "background":"#F0F8FF","backgroundLight":"#E0F0FA","backgroundNeutral":"#B0C8E0",
-        "tableAccent":"#0077B6","good":"#00B4D8","neutral":"#90E0EF","bad":"#E63946",
-        "maximum":"#023E8A","center":"#90E0EF","minimum":"#CAF0F8",
-        "fontFace":"Segoe UI","fontSize":10,"fontColor":"#1A1A2E",
-        "xAxisGridStyle":"dashed","yAxisGridStyle":"dashed","xAxisGridColor":"#B0C8E0","yAxisGridColor":"#B0C8E0",
-    },
-    "Ember Forge": {
-        "desc": "Warm terracotta tones",
-        "dataColors": ["#E76F51","#F4A261","#E9C46A","#264653","#2A9D8F","#A8DADC","#457B9D","#1D3557","#E63946","#F1FAEE"],
-        "foreground":"#1D2B1D","foregroundNeutralSecondary":"#5C4A3A","foregroundNeutralTertiary":"#A08070",
-        "background":"#FFFBF5","backgroundLight":"#FFF3E0","backgroundNeutral":"#D4B896",
-        "tableAccent":"#E76F51","good":"#2A9D8F","neutral":"#E9C46A","bad":"#E63946",
-        "maximum":"#E76F51","center":"#F4A261","minimum":"#FFF3E0",
-        "fontFace":"Georgia","fontSize":10,"fontColor":"#1D2B1D",
-        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#D4B896","yAxisGridColor":"#D4B896",
-    },
-    "Neon Pulse": {
-        "desc": "Cyberpunk & vivid",
-        "dataColors": ["#FF2D78","#00F5FF","#7B2FBE","#39FF14","#FF6B00","#FFD700","#FF69B4","#00BFFF","#9400D3","#FF4500"],
-        "foreground":"#F0F0FF","foregroundNeutralSecondary":"#A0A0C0","foregroundNeutralTertiary":"#606080",
-        "background":"#0D0D1A","backgroundLight":"#15152A","backgroundNeutral":"#252540",
-        "tableAccent":"#FF2D78","good":"#39FF14","neutral":"#FFD700","bad":"#FF2D78",
-        "maximum":"#00F5FF","center":"#7B2FBE","minimum":"#15152A",
-        "fontFace":"Trebuchet MS","fontSize":10,"fontColor":"#F0F0FF",
-        "xAxisGridStyle":"dashed","yAxisGridStyle":"dashed","xAxisGridColor":"#252540","yAxisGridColor":"#252540",
-    },
-    "Sage & Stone": {
-        "desc": "Earthy & minimal",
-        "dataColors": ["#6B8F71","#AAC0AA","#D4C5A9","#8B7355","#C4A882","#E8DCC8","#4A7C59","#9CAF88","#BFA98A","#5C6B4A"],
-        "foreground":"#2C2A1E","foregroundNeutralSecondary":"#6B6050","foregroundNeutralTertiary":"#A09080",
-        "background":"#FAF8F2","backgroundLight":"#F0EDE4","backgroundNeutral":"#D8D0C0",
-        "tableAccent":"#6B8F71","good":"#4A7C59","neutral":"#C4A882","bad":"#A05050",
-        "maximum":"#6B8F71","center":"#D4C5A9","minimum":"#F0EDE4",
-        "fontFace":"Verdana","fontSize":10,"fontColor":"#2C2A1E",
-        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#D8D0C0","yAxisGridColor":"#D8D0C0",
-    },
-    "Royal Ink": {
-        "desc": "Deep purple & gold",
-        "dataColors": ["#6A0DAD","#9B59B6","#F1C40F","#2C3E50","#8E44AD","#D4AC0D","#1ABC9C","#E74C3C","#3498DB","#F39C12"],
-        "foreground":"#1A0A2E","foregroundNeutralSecondary":"#5A4A7A","foregroundNeutralTertiary":"#9A8AB0",
-        "background":"#FDFAFF","backgroundLight":"#F5EEFF","backgroundNeutral":"#D8C8EE",
-        "tableAccent":"#6A0DAD","good":"#1ABC9C","neutral":"#F1C40F","bad":"#E74C3C",
-        "maximum":"#6A0DAD","center":"#F1C40F","minimum":"#F5EEFF",
-        "fontFace":"Calibri","fontSize":10,"fontColor":"#1A0A2E",
-        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#D8C8EE","yAxisGridColor":"#D8C8EE",
-    },
-    "Arctic Frost": {
-        "desc": "Crisp icy blues",
+    "Dark Blue": {
+        "desc": "Professional dark slate",
         "dataColors": ["#5B9BD5","#ED7D31","#A5A5A5","#FFC000","#4472C4","#70AD47","#255E91","#9E480E","#636363","#997300"],
-        "foreground":"#1F2937","foregroundNeutralSecondary":"#6B7280","foregroundNeutralTertiary":"#D1D5DB",
-        "background":"#F8FAFC","backgroundLight":"#EDF2F7","backgroundNeutral":"#CBD5E0",
-        "tableAccent":"#5B9BD5","good":"#70AD47","neutral":"#FFC000","bad":"#ED7D31",
-        "maximum":"#4472C4","center":"#FFC000","minimum":"#EDF2F7",
-        "fontFace":"Calibri","fontSize":10,"fontColor":"#1F2937",
-        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#CBD5E0","yAxisGridColor":"#CBD5E0",
+        "foreground":"#FFFFFF","foregroundNeutralSecondary":"#D0D0D0","foregroundNeutralTertiary":"#A8A8A8",
+        "background":"#1F2D42","backgroundLight":"#263449","backgroundNeutral":"#3D4A60",
+        "tableAccent":"#5B9BD5","good":"#70AD47","neutral":"#FFC000","bad":"#FF6B6B",
+        "maximum":"#5B9BD5","center":"#ED7D31","minimum":"#263449",
+        "fontFace":"Segoe UI","fontSize":11,"fontColor":"#FFFFFF",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#3D4A60","yAxisGridColor":"#3D4A60",
     },
-    "Obsidian Dark": {
-        "desc": "Dark mode analytics",
-        "dataColors": ["#5C6BC0","#26C6DA","#66BB6A","#FFA726","#EF5350","#AB47BC","#29B6F6","#D4E157","#FF7043","#8D6E63"],
-        "foreground":"#E8EAED","foregroundNeutralSecondary":"#9AA0A6","foregroundNeutralTertiary":"#5F6368",
-        "background":"#202124","backgroundLight":"#292A2D","backgroundNeutral":"#3C4043",
-        "tableAccent":"#5C6BC0","good":"#66BB6A","neutral":"#FFA726","bad":"#EF5350",
-        "maximum":"#26C6DA","center":"#FFA726","minimum":"#292A2D",
-        "fontFace":"Segoe UI","fontSize":10,"fontColor":"#E8EAED",
-        "xAxisGridStyle":"dashed","yAxisGridStyle":"dashed","xAxisGridColor":"#3C4043","yAxisGridColor":"#3C4043",
+    "Dark Gray": {
+        "desc": "Executive charcoal",
+        "dataColors": ["#FF7D28","#A4373A","#6B69D6","#FF6B9D","#00B7C3","#D0CECE","#00B4EF","#0063B1","#00A000","#FFD700"],
+        "foreground":"#F5F5F5","foregroundNeutralSecondary":"#C8C8C8","foregroundNeutralTertiary":"#8A8A8A",
+        "background":"#1C1C1C","backgroundLight":"#2A2A2A","backgroundNeutral":"#383838",
+        "tableAccent":"#FF7D28","good":"#00A000","neutral":"#FFD700","bad":"#FF6B6B",
+        "maximum":"#FF7D28","center":"#00B4EF","minimum":"#2A2A2A",
+        "fontFace":"Calibri","fontSize":11,"fontColor":"#F5F5F5",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#383838","yAxisGridColor":"#383838",
+    },
+    "Dark Purple": {
+        "desc": "Modern violet dark",
+        "dataColors": ["#6B69D6","#FF6B9D","#00B7C3","#FFB900","#00A000","#FF7D28","#5B9BD5","#ED7D31","#70AD47","#FFC000"],
+        "foreground":"#F3F3F3","foregroundNeutralSecondary":"#D5D5D5","foregroundNeutralTertiary":"#9E9E9E",
+        "background":"#2D1B4E","backgroundLight":"#3D2E5C","backgroundNeutral":"#4D3F70",
+        "tableAccent":"#6B69D6","good":"#00A000","neutral":"#FFB900","bad":"#FF4444",
+        "maximum":"#6B69D6","center":"#FF6B9D","minimum":"#3D2E5C",
+        "fontFace":"Segoe UI","fontSize":11,"fontColor":"#F3F3F3",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#4D3F70","yAxisGridColor":"#4D3F70",
+    },
+    "Dark Green": {
+        "desc": "Analytics forest",
+        "dataColors": ["#00A000","#70AD47","#00B7C3","#5B9BD5","#FF7D28","#A4373A","#6B69D6","#FFB900","#ED7D31","#90EE90"],
+        "foreground":"#F0F5F0","foregroundNeutralSecondary":"#D0D8D0","foregroundNeutralTertiary":"#9CB59C",
+        "background":"#1B3820","backgroundLight":"#254530","backgroundNeutral":"#325040",
+        "tableAccent":"#00A000","good":"#70AD47","neutral":"#FFB900","bad":"#FF6B6B",
+        "maximum":"#00B7C3","center":"#70AD47","minimum":"#254530",
+        "fontFace":"Segoe UI","fontSize":11,"fontColor":"#F0F5F0",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#325040","yAxisGridColor":"#325040",
+    },
+    "Dark Orange": {
+        "desc": "Warm sunset analytics",
+        "dataColors": ["#FF7D28","#FFB900","#FFC000","#ED7D31","#A4373A","#6B69D6","#00B7C3","#5B9BD5","#00A000","#FF6B9D"],
+        "foreground":"#FFF9F5","foregroundNeutralSecondary":"#E8DDD5","foregroundNeutralTertiary":"#B8A89E",
+        "background":"#402D1F","backgroundLight":"#4D3A28","backgroundNeutral":"#5C4733",
+        "tableAccent":"#FF7D28","good":"#00A000","neutral":"#FFB900","bad":"#FF4444",
+        "maximum":"#FF7D28","center":"#FFB900","minimum":"#4D3A28",
+        "fontFace":"Calibri","fontSize":11,"fontColor":"#FFF9F5",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#5C4733","yAxisGridColor":"#5C4733",
+    },
+    "Dark Teal": {
+        "desc": "Cool professional",
+        "dataColors": ["#00B7C3","#5B9BD5","#0078D4","#00B4EF","#70AD47","#FFB900","#FF7D28","#A4373A","#6B69D6","#FF6B9D"],
+        "foreground":"#F0F8FA","foregroundNeutralSecondary":"#D0E0E8","foregroundNeutralTertiary":"#98B0B8",
+        "background":"#1B3A42","backgroundLight":"#254655","backgroundNeutral":"#326070",
+        "tableAccent":"#00B7C3","good":"#70AD47","neutral":"#FFB900","bad":"#FF5555",
+        "maximum":"#0078D4","center":"#00B7C3","minimum":"#254655",
+        "fontFace":"Segoe UI","fontSize":11,"fontColor":"#F0F8FA",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#326070","yAxisGridColor":"#326070",
+    },
+    "Dark Red": {
+        "desc": "Corporate burgundy",
+        "dataColors": ["#A4373A","#FF6B6B","#FF7D28","#FFB900","#6B69D6","#00B7C3","#5B9BD5","#00A000","#70AD47","#ED7D31"],
+        "foreground":"#FFF5F5","foregroundNeutralSecondary":"#E8D0D0","foregroundNeutralTertiary":"#B8A0A0",
+        "background":"#3D1F1F","backgroundLight":"#4D2D2D","backgroundNeutral":"#603838",
+        "tableAccent":"#A4373A","good":"#00A000","neutral":"#FFB900","bad":"#FF4444",
+        "maximum":"#A4373A","center":"#FF7D28","minimum":"#4D2D2D",
+        "fontFace":"Calibri","fontSize":11,"fontColor":"#FFF5F5",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#603838","yAxisGridColor":"#603838",
+    },
+    "High Contrast Dark": {
+        "desc": "Maximum visibility dark",
+        "dataColors": ["#00FF00","#00BFFF","#FFD700","#FF6B35","#FF1493","#00FF7F","#87CEEB","#FFFF00","#FF4500","#32CD32"],
+        "foreground":"#FFFFFF","foregroundNeutralSecondary":"#E0E0E0","foregroundNeutralTertiary":"#B0B0B0",
+        "background":"#000000","backgroundLight":"#1A1A1A","backgroundNeutral":"#333333",
+        "tableAccent":"#00BFFF","good":"#00FF00","neutral":"#FFD700","bad":"#FF1493",
+        "maximum":"#00BFFF","center":"#00FF7F","minimum":"#1A1A1A",
+        "fontFace":"Segoe UI","fontSize":11,"fontColor":"#FFFFFF",
+        "xAxisGridStyle":"solid","yAxisGridStyle":"solid","xAxisGridColor":"#333333","yAxisGridColor":"#333333",
+    },
+    "Minimal Light": {
+        "desc": "Clean white palette",
+        "dataColors": ["#0078D4","#107C10","#D83B01","#FFB900","#C239B3","#00B7C3","#A4373A","#605E5C","#6B69D6","#ED7D31"],
+        "foreground":"#201F1E","foregroundNeutralSecondary":"#484644","foregroundNeutralTertiary":"#8A8886",
+        "background":"#FAFAFA","backgroundLight":"#F3F2F1","backgroundNeutral":"#E1DFDD",
+        "tableAccent":"#0078D4","good":"#107C10","neutral":"#FFB900","bad":"#D83B01",
+        "maximum":"#0078D4","center":"#00B7C3","minimum":"#E1DFDD",
+        "fontFace":"Segoe UI","fontSize":10,"fontColor":"#201F1E",
+        "xAxisGridStyle":"dotted","yAxisGridStyle":"dotted","xAxisGridColor":"#E1DFDD","yAxisGridColor":"#E1DFDD",
     },
 }
 
+# ── BASE THEME ────────────────────────────────────────────────────────────────
 BASE_THEME = {
-    "name":"CY26SU02",
-    "dataColors":["#118DFF","#12239E","#E66C37","#6B007B","#E044A7","#744EC2","#D9B300","#D64550","#197278","#1AAB40"],
-    "foreground":"#252423","foregroundNeutralSecondary":"#605E5C","foregroundNeutralTertiary":"#B3B0AD",
-    "background":"#FFFFFF","backgroundLight":"#F3F2F1","backgroundNeutral":"#C8C6C4",
-    "tableAccent":"#118DFF","good":"#1AAB40","neutral":"#D9B300","bad":"#D64554",
-    "maximum":"#118DFF","center":"#D9B300","minimum":"#DEEFFF","null":"#FF7F48",
-    "hyperlink":"#0078d4","visitedHyperlink":"#0078d4",
-    "textClasses":{
-        "callout":{"fontSize":24,"fontFace":"DIN","color":"#252423"},
-        "title":  {"fontSize":12,"fontFace":"DIN","color":"#252423"},
-        "header": {"fontSize":12,"fontFace":"Segoe UI Semibold","color":"#252423"},
-        "label":  {"fontSize":10,"fontFace":"Segoe UI","color":"#252423"},
+    "name": "CY26SU02",
+    "dataColors": [
+        "#118DFF","#12239E","#E66C37","#6B007B","#E044A7",
+        "#744EC2","#D9B300","#D64550","#197278","#1AAB40"
+    ],
+    "foreground": "#252423",
+    "foregroundNeutralSecondary": "#605E5C",
+    "foregroundNeutralTertiary": "#B3B0AD",
+    "background": "#FFFFFF",
+    "backgroundLight": "#F3F2F1",
+    "backgroundNeutral": "#C8C6C4",
+    "tableAccent": "#118DFF",
+    "good": "#1AAB40",
+    "neutral": "#D9B300",
+    "bad": "#D64554",
+    "maximum": "#118DFF",
+    "center": "#D9B300",
+    "minimum": "#DEEFFF",
+    "null": "#FF7F48",
+    "hyperlink": "#0078d4",
+    "visitedHyperlink": "#0078d4",
+    "textClasses": {
+        "callout": {"fontSize": 24, "fontFace": "DIN",               "color": "#252423"},
+        "title":   {"fontSize": 12, "fontFace": "DIN",               "color": "#252423"},
+        "header":  {"fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#252423"},
+        "label":   {"fontSize": 10, "fontFace": "Segoe UI",          "color": "#252423"},
     },
-    "visualStyles":{
-        "*":{"*":{
-            "*":[{"wordWrap":True}],"line":[{"transparency":0}],"outline":[{"transparency":0}],
-            "plotArea":[{"transparency":0}],
-            "categoryAxis":[{"showAxisTitle":True,"gridlineStyle":"dotted","concatenateLabels":False}],
-            "valueAxis":[{"showAxisTitle":True,"gridlineStyle":"dotted"}],
-            "title":[{"titleWrap":True}],"lineStyles":[{"strokeWidth":3}],
-            "background":[{"show":True,"transparency":0}],"border":[{"width":1}],
+    "visualStyles": {
+        "*": {"*": {
+            "*":            [{"wordWrap": True}],
+            "line":         [{"transparency": 0}],
+            "outline":      [{"transparency": 0}],
+            "plotArea":     [{"transparency": 0}],
+            "categoryAxis": [{"showAxisTitle": True, "gridlineStyle": "dotted", "concatenateLabels": False}],
+            "valueAxis":    [{"showAxisTitle": True, "gridlineStyle": "dotted"}],
+            "title":        [{"titleWrap": True}],
+            "lineStyles":   [{"strokeWidth": 3}],
+            "background":   [{"show": True, "transparency": 0}],
+            "border":       [{"width": 1}],
         }},
-        "scatterChart":  {"*":{"bubbles":[{"bubbleSize":-10}],"fillPoint":[{"show":True}]}},
-        "lineChart":     {"*":{"general":[{"responsive":True}]}},
-        "pieChart":      {"*":{"legend":[{"show":True,"position":"RightCenter"}],"labels":[{"labelStyle":"Data value, percent of total"}]}},
-        "donutChart":    {"*":{"legend":[{"show":True,"position":"RightCenter"}]}},
-        "pivotTable":    {"*":{"rowHeaders":[{"showExpandCollapseButtons":True}]}},
-        "columnChart":   {"*":{"general":[{"responsive":True}],"legend":[{"showGradientLegend":True}]}},
-        "barChart":      {"*":{"general":[{"responsive":True}],"legend":[{"showGradientLegend":True}]}},
-        "kpi":           {"*":{"trendline":[{"transparency":20}]}},
-        "cardVisual":    {"*":{"layout":[{"maxTiles":3}]}},
-        "slicer":        {"*":{"general":[{"responsive":True}]}},
-        "waterfallChart":{"*":{"general":[{"responsive":True}]}},
-        "ribbonChart":   {"*":{"general":[{"responsive":True}]}},
-        "areaChart":     {"*":{"general":[{"responsive":True}]}},
+        "scatterChart":   {"*": {"bubbles":    [{"bubbleSize": -10}], "fillPoint": [{"show": True}]}},
+        "lineChart":      {"*": {"general":    [{"responsive": True}]}},
+        "pieChart":       {"*": {"legend":     [{"show": True, "position": "RightCenter"}], "labels": [{"labelStyle": "Data value, percent of total"}]}},
+        "donutChart":     {"*": {"legend":     [{"show": True, "position": "RightCenter"}]}},
+        "pivotTable":     {"*": {"rowHeaders": [{"showExpandCollapseButtons": True}]}},
+        "columnChart":    {"*": {"general":    [{"responsive": True}], "legend": [{"showGradientLegend": True}]}},
+        "barChart":       {"*": {"general":    [{"responsive": True}], "legend": [{"showGradientLegend": True}]}},
+        "kpi":            {"*": {"trendline":  [{"transparency": 20}]}},
+        "cardVisual":     {"*": {"layout":     [{"maxTiles": 3}]}},
+        "slicer":         {"*": {"general":    [{"responsive": True}]}},
+        "waterfallChart": {"*": {"general":    [{"responsive": True}]}},
+        "ribbonChart":    {"*": {"general":    [{"responsive": True}]}},
+        "areaChart":      {"*": {"general":    [{"responsive": True}]}},
     }
 }
 
@@ -211,7 +250,7 @@ def _init_state():
     ss = st.session_state
     ss.setdefault("theme",            copy.deepcopy(BASE_THEME))
     ss.setdefault("vis_custom",       {})
-    ss.setdefault("active_preset",    "Microsoft Default")
+    ss.setdefault("active_preset",    "Office Light")
     ss.setdefault("theme_name",       BASE_THEME["name"])
     ss.setdefault("global_font_face", "Segoe UI")
     ss.setdefault("global_font_size", 10)
@@ -262,7 +301,7 @@ def _apply_preset_cb():
     ss.global_font_face  = preset.get("fontFace","Segoe UI")
     ss.global_font_size  = preset.get("fontSize",10)
     ss.global_font_color = preset.get("fontColor", preset["foreground"])
-    ss.report_bg_color   = "#FFFFFF"
+    ss.report_bg_color   = preset.get("background", "#FFFFFF")
     ss.vis_custom        = {}
     st.rerun()
 
@@ -549,7 +588,7 @@ left, right = st.columns([1, 2.1], gap="small")
 with left:
     st.markdown('<div style="padding:16px 12px 0">', unsafe_allow_html=True)
 
-    # ── PRESET THEMES — radio with on_change, no st.rerun() ───────────────────
+    # ── PRESET THEMES — with Apply buttons ────────────────────────────────────
     st.markdown('<p style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#2a3555;margin-bottom:8px">Preset Themes</p>', unsafe_allow_html=True)
 
     preset_names = list(PRESET_THEMES.keys())
@@ -563,16 +602,27 @@ with left:
                 sw = "".join(f'<span style="flex:1;background:{c}"></span>' for c in dc[:6])
                 bdr = "border:1px solid #4f8ef7;box-shadow:0 0 0 1px #4f8ef7;" if is_active else "border:1px solid #111827;"
                 nc  = "#c8d8f0" if is_active else "#8aaad8"
-                st.markdown(f'<div style="border-radius:8px;overflow:hidden;background:#070b15;{bdr}margin-bottom:2px"><div style="display:flex;height:6px">{sw}</div><div style="padding:6px 8px"><div style="font-family:IBM Plex Mono,monospace;font-size:9px;color:{nc}">{pname}</div><div style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#2d3a58;margin-top:2px">{PRESET_THEMES[pname]["desc"]}</div></div></div>', unsafe_allow_html=True)
-
-    st.radio(
-        "Select preset",
-        options=preset_names,
-        index=preset_names.index(st.session_state.active_preset),
-        key="_preset_radio",
-        on_change=_apply_preset_cb,
-        label_visibility="collapsed",
-    )
+                st.markdown(f'<div style="border-radius:8px;overflow:hidden;background:#070b15;{bdr}margin-bottom:8px"><div style="display:flex;height:6px">{sw}</div><div style="padding:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:9px;color:{nc};margin-bottom:2px">{pname}</div><div style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#2d3a58;margin-bottom:6px">{PRESET_THEMES[pname]["desc"]}</div></div></div>', unsafe_allow_html=True)
+                
+                if is_active:
+                    st.button("✓ Applied", key=f"preset_{pname}", disabled=True, use_container_width=True)
+                else:
+                    if st.button("Apply", key=f"preset_{pname}", use_container_width=True):
+                        st.session_state.active_preset = pname
+                        st.session_state.theme_name = pname.replace(" ", "_")
+                        preset = PRESET_THEMES[pname]
+                        t = st.session_state.theme
+                        for key in ["dataColors","foreground","foregroundNeutralSecondary","foregroundNeutralTertiary",
+                                    "background","backgroundLight","backgroundNeutral","tableAccent",
+                                    "good","neutral","bad","maximum","center","minimum"]:
+                            if key in preset:
+                                t[key] = preset[key][:] if key == "dataColors" else preset[key]
+                        st.session_state.global_font_face = preset.get("fontFace","Segoe UI")
+                        st.session_state.global_font_size = preset.get("fontSize",10)
+                        st.session_state.global_font_color = preset.get("fontColor", preset["foreground"])
+                        st.session_state.report_bg_color = preset.get("background", "#FFFFFF")
+                        st.session_state.vis_custom = {}
+                        st.rerun()
 
     st.divider()
 
@@ -593,17 +643,6 @@ with left:
             for vt in st.session_state.vis_custom:
                 st.session_state.vis_custom[vt].update({"fontFace":new_gff,"fontSize":new_gfs,"fontColor":new_gfc})
             st.rerun()
-
-    st.divider()
-
-    # ── REPORT BACKGROUND ─────────────────────────────────────────────────────
-    st.markdown('<p style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#2a3555;margin-bottom:6px">🖼  Report Background Color</p>', unsafe_allow_html=True)
-    st.markdown('<p style="font-size:8px;color:#1e2e50;margin-bottom:8px;font-family:IBM Plex Mono,monospace">Sets background &amp; outspacePane in JSON</p>', unsafe_allow_html=True)
-    new_rbg = st.color_picker("BG", st.session_state.report_bg_color, key="report_bg_picker", label_visibility="collapsed")
-    if new_rbg != st.session_state.report_bg_color:
-        st.session_state.report_bg_color = new_rbg
-        st.session_state.theme["background"] = new_rbg
-        st.rerun()
 
     st.divider()
 
